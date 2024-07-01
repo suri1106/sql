@@ -1,0 +1,100 @@
+* {
+    margin: 0 auto;
+}
+
+input {
+    padding: 5px;
+    margin: 5px;
+
+    width: 200px;
+}
+nav{
+    padding: 20px;
+}
+
+form {
+    text-align: center;
+}
+
+.fieldset {
+    width: 100px;
+}
+/* #div1 {
+    display: none;
+} */
+th,td {
+    padding: 8px;
+    text-align: center;
+}
+.btn{
+    cursor: pointer;
+    padding: 7px; 
+     margin-left: 445px;
+     position: relative;
+      bottom: 30px; 
+  }
+  #table_block  tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+#table_block  tr:nth-child(odd) {
+    background-color :goldenrod;
+}
+.error {
+    color: red;
+    font-size: 16px;
+}
+#iderror{
+    position: relative;
+    top: 70px;
+    right: 150px;
+}
+#nameerror{
+    position: relative;
+    top: 70px;
+    left: 210px;
+}
+#emailerror{
+    position: relative;
+    top: 128px;
+    right: 150px;
+}
+#phone_noerror{
+    position: relative;
+    top: 120px;
+    left: 230px;
+    font-size: 15px;
+}
+#dateerror{
+    position: relative;
+    top: 190px;
+    right: 150px;
+
+}
+#address{
+    width: 210px;
+    height: 25px;
+}
+.btn1{
+    padding: 5px;
+    width: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="in 2.css">
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>
+            <h1>INVOICE</h1>
+        </legend>
+        <div class="container">
+            <form name="myForm" id="myForm" autocomplete="off">
+
+                <fieldset class="fielset2">
+                    <table class="tbl">
+                        <tr>
+                            <th><label for="inid">Invoice Id<span style="color: red;">*</span></label>
+                            </th>
+                            <td> <input type="text" name="id" id="inid"> <br></td>
+                            <th><label for="name">Vendor Id <span style="color: red;">*</span< /label>
+                            </th>
+                            <td> <input type="text" name="name" id="name"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="docno">Document No <span style="color: red;">*</span< /label>
+                            </th>
+                            <td> <input type="number" name="docno" id="docno"></td>
+                            <th><label for="">Invoice Date <span style="color: red;">*</span< /label>
+                            </th>
+                            <td> <input type="date" name="date" id="date"></td>
+                        </tr>
+                        <tr>
+                            <th><label for="totalamount">Payment Status <span style="color: red;">*</span< /label>
+                            </th>
+                            <td>
+                                <select name="" id="status">
+                                    <option value="">select</option>
+                                    <option value="paid">paid</option>
+                                    <option value="unpaid">unpaid</option>
+                                    <option value="pending">pending</option>
+                                </select>
+                            </td>
+                            <th>Billing Address<span style="color: red;">*</span< /th>
+                            <td> <textarea name="" id="address" cols="5" rows="10"></textarea> </td>
+                        </tr>
+                    </table>
+                    <input type="submit" value="Submit" class="btn1">
+                    <input type="reset" class="btn1" class="Reset">
+                </fieldset>
+                </table>
+            </form>
+            <br><br>
+            <fieldset class="fielset">
+                <form name="myForm1" id="myForm1" action="" method="POST" autocomplete="off">
+                    <table class="tbl">
+                        <tr>
+                            <th><label for="inid">Product Id<span style="color: red;">*</span></label></th>
+                            <td> <input type="text" name="id" id="id"> <br></td>
+                            <th><label for="ini">Product Name<span style="color: red;">*</span></label></th>
+                            <td> <select name="p_name" id="p_name">
+                                    <option value="">Select</option>
+                                    <option value="Laptop">Laptop</option>
+                                    <option value="Mobile">Mobile</option>
+                                    <option value="milk">milk</option>
+                                    <option value="sugar">sugar</option>
+                                </select></td>
+                        </tr>
+
+                        <tr>
+                            <th><label for="quantity">Quantity <span style="color: red;">*</span< /label>
+                            </th>
+                            <td> <input type="number" name="quantity" id="quantity"></td>
+                            <th><label for="UOM">UOM <span style="color: red;">*</span< /label>
+                            </th>
+                            <td>
+
+                                <select name="" id="uom">
+                                    <option value="">Select</option>
+                                    <option value="KG">KG</option>
+                                    <option value="Liter">Liter</option>
+                                    <option value="item">Item</option>
+                                    <option value="Ton">Ton</option>
+                                </select>
+                            </td>
+
+                        </tr>
+                        <tr>
+
+                            <th><label for="price">Unit Price <span style="color: red;">*</span< /label>
+                            </th>
+                            <td> <input type="number" name="price" id="price"></td>
+
+                        </tr>
+
+
+                    </table>
+
+
+                    <input type="reset" class="btn" value="Cancel">
+                </form>
+                <input type="submit" value="Add " onclick="addrecord()" class="btn">
+            </fieldset>
+            <br><br>
+
+
+
+    </fieldset>
+
+
+
+    <br><br><br>
+
+    <div id="table_block">
+        <table id="table" border="1px solid black " role="all" style="border-collapse: collapse; width:50%;">
+
+            <tr style="padding: 20px;">
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>UOM</th>
+                <th>Unit Price</th>
+                <th>Total Amount</th>
+                <th>Action</th>
+            </tr>
+        </table>
+    </div>
+    <script src="in.js">
+
+    </script>
+</body>
+
+</html>

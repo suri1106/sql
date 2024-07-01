@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        input {
+            border: none;
+            outline: none;
+            border-bottom: 1px solid black;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+        }
+
+        input:hover {
+            box-shadow: 0px 0px 10px green;
+        }
+
+        div {
+            text-align: center;
+
+        }
+
+        .d1 {
+            padding: 50px;
+            border: 1px solid black;
+            width: 400px;
+            margin: 20px auto;
+            border-radius: 10px;
+            background-color: transparent;
+        }
+
+        .d1:hover {
+            box-shadow: 0px 0px 10px blue;
+        }
+
+        nav {
+            background-color: black;
+            padding: 10px;
+            height: 90px;
+        }
+
+        img {
+            width: 200px;
+            position: relative;
+            bottom: 60px;
+            right: 580px;
+        }
+
+        .a {
+            text-decoration: none;
+            font-size: 30px;
+            color: gold;
+            margin-left: 900px;
+            position: relative;
+            bottom: 160px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div>
+                <br><br>
+                <li><img src="m1.png" class="img" alt=""></li>
+                <a class="a" href="index.html">login</a>
+
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="d1">
+
+        <form action="supermarket.html" method="POST">
+            <h1> Sign up</h1>
+            <br>
+            <input type="text" id="name" name="name" placeholder=" Enter the name " required />
+            <br><br>
+            <input type="text" id="username" name="username" placeholder="Username" required />
+            <br><br>
+
+            <input type="email" id="email" name="email" value="" placeholder="ex.surya@email.com" required />
+            <br><br>
+
+            <input type="number" id="phone" name="phone" value="" placeholder="Phone Number" required />
+            <br><br>
+            <button> Sign up</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

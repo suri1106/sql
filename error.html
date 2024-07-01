@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Example</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myForm">
+        <div class="form-control">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <span class="error" id="nameError"></span>
+        </div>
+        <div class="form-control">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+            <span class="error" id="emailError"></span>
+        </div>
+        <div class="form-control">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <span class="error" id="passwordError"></span>
+        </div>
+        <button type="submit">Submit</button>
+
+    </form>
+    <button onclick="history.back()">goback</button>
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function (event) {
+            // Prevent form submission
+            event.preventDefault();
+
+            // Clear previous error messages
+            document.getElementById('nameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            let isValid = true;
+
+            // Name validation
+            if (name === '') {
+                document.getElementById('nameError').textContent = 'Name is required';
+                isValid = false;
+            }
+
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === '') {
+                document.getElementById('emailError').textContent = 'Email is required';
+                isValid = false;
+            } else if (!emailPattern.test(email)) {
+                document.getElementById('emailError').textContent = 'Invalid email format';
+                isValid = false;
+            }
+
+            // Password validation
+            if (password === '') {
+                document.getElementById('passwordError').textContent = 'Password is required';
+                isValid = false;
+            } else if (password.length < 6) {
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters';
+                isValid = false;
+            }
+
+            // If the form is valid, you can submit it or perform further actions
+            if (isValid) {
+                alert('Form is valid and ready to submit');
+                const name = document.getElementById('name').value = "";
+                const email = document.getElementById('email').value = "";
+                const password = document.getElementById('password').value = "";
+
+            }
+
+        });
+
+        function Back() {
+            if (window.innerDocClick) {
+                window.innerDocClick = false;
+            } else {
+                if (window.location.hash != '#undefined') {
+                    goBack();
+                } else {
+                    history.pushState("", document.title, window.location.pathname);
+                    location.reload();
+                }
+            }
+        }
+
+
+        function functio() {
+            // The popstate event is fired each time when the current history entry changes.
+
+            var r = confirm("You pressed a Back button! Are you sure?!");
+
+            if (r == true) {
+                // Call Back button programmatically as per user confirmation.
+                history.back();
+                // Uncomment below line to redirect to the previous page instead.
+                // window.location = document.referrer // Note: IE11 is not supporting this.
+            } else {
+                // Stay on the current page.
+                history.pushState(null, null, window.location.pathname);
+            }
+
+            history.pushState(null, null, window.location.pathname);
+
+        }
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+    </script>
+</body>
+
+</html>

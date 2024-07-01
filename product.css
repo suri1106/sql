@@ -1,0 +1,62 @@
+* {
+    margin: 0 auto;
+}
+
+input {
+    padding: 5px;
+    margin: 5px;
+   width: 200px;
+   text-align: center;
+
+}
+
+form {
+    text-align: center;
+}
+
+.fieldset {
+    width: 100px;
+}
+
+/* #div1 {
+    display: none;
+
+
+} */
+td{
+    
+    padding: 10px;
+  }
+.btn{
+     transition: 5s;
+    background-color: gold;
+    border: none;
+    cursor: pointer;
+    /* color: whitesmoke; */
+    padding: 10px;
+     border-radius: 9px;
+     margin-left: 40px;
+
+  }
+#div1  tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+#div1  tr:nth-child(odd) {
+    background-color :goldenrod;
+}
+select{
+    width: 200px;
+   padding: 8px;    
+}
+button{
+     padding: 5px;
+     width: 50px;
+}
+th,td {
+    padding: 8px;
+    text-align: center;
+}
+
+

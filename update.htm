@@ -1,0 +1,590 @@
+function onsubmitHandler() {
+validateForm();
+addrecord();
+}
+function onsumit() {
+changes();
+UOM();
+}
+function changes() {
+let product = document.getElementById('Product');
+product.style.borderColor = 'black';
+document.getElementById('prerror').textContent = '';
+}
+function validateForm() {
+let Product = document.getElementById('Product');
+let qty = document.getElementById('quantity');
+let price = document.getElementById('price');
+if (Product.value == '') {
+document.getElementById('prerror').textContent = "Product is required *";
+Product.style.borderColor = 'red';
+} else {
+Product.style.borderColor = 'black';
+
+}
+
+if (qty.value == '') {
+qty.style.borderColor = 'red';
+document.getElementById('quantity').setAttribute("placeholder", "Quantity is required *");
+} else {
+document.getElementById('quantity').removeAttribute("placeholder");
+qty.style.borderColor = 'black';
+}
+if (price.value == '') {
+price.style.borderColor = 'red';
+document.getElementById('price').setAttribute("placeholder", "Price is required *");
+
+} else {
+price.style.borderColor = 'black';
+document.getElementById('price').removeAttribute("placeholder");
+
+}
+
+}
+
+const mapping = {
+'Apple': 'KG',
+'Sugar': 'KG',
+'Milk': 'Liter',
+'Oil': 'Liter',
+'Orange': 'KG',
+};
+
+function UOM() {
+const productName = document.getElementById('Product').value;
+const uom = document.getElementById('uom');
+uom.value = mapping[productName];
+}
+
+function addrecord() {
+let Product = document.getElementById('Product').value;
+let qty = document.getElementById('quantity').value;
+let price = document.getElementById('price').value;
+let uom = document.getElementById('uom').value;
+let amount = qty * price;
+if (Product === "" || isNaN(qty) || isNaN(price) || qty <= 0 || price <=0) { return false; } let
+  table=document.getElementById('Table'); let rows=table.rows; let existingProductRow=null; for (let i=1; i <
+  rows.length; i++) { if (rows[i].cells[1].innerHTML===Product) { existingProductRow=rows[i]; break; } }
+  document.getElementById('error').textContent='' ; if (existingProductRow) { let
+  Product=document.getElementById('Product').value='' ; // error msg
+  document.getElementById('error').textContent="Product already inside!" ; Product.style.borderColor='red' ; return
+  false; } else { let tr=document.createElement('tr'); let td1=tr.appendChild(document.createElement('td')); let
+  td2=tr.appendChild(document.createElement('td')); let td3=tr.appendChild(document.createElement('td')); let
+  td4=tr.appendChild(document.createElement('td')); let td5=tr.appendChild(document.createElement('td')); let
+  td6=tr.appendChild(document.createElement('td')); let td7=tr.appendChild(document.createElement('td'));
+  td1.innerHTML=rows.length; td2.innerHTML=Product; td3.innerHTML=qty; td4.innerHTML=uom; td5.innerHTML=price;
+  td6.innerHTML=amount; td7.innerHTML=`<img src="edit.png" class="edit" onclick="update(this.parentNode.parentNode)"
+  title="edit" alt="edit">&nbsp;
+  <img src="icon1.png" class="trash" title="delete" onclick="adelete(this)" alt="trash">`;
+
+  table.appendChild(tr);
+
+  document.getElementById('myForm1').reset();
+
+  }
+  // let duplicate = document.getElementById('dummy');
+  // let len = dummy.rows;
+  // let duplicate_tr = document.createElement('tr');
+  // let td11 = duplicate_tr.appendChild(document.createElement('td'));
+  // let td12 = duplicate_tr.appendChild(document.createElement('td'));
+  // let td13 = duplicate_tr.appendChild(document.createElement('td'));
+  // let td14 = duplicate_tr.appendChild(document.createElement('td'));
+  // let td15 = duplicate_tr.appendChild(document.createElement('td'));
+  // let td16 = duplicate_tr.appendChild(document.createElement('td'));
+  // td11.innerHTML = len.length;
+  // td12.innerHTML = Product;
+  // td13.innerHTML = qty;
+  // td14.innerHTML = uom;
+  // td15.innerHTML = price;
+  // td16.innerHTML = amount;
+  // duplicate.appendChild(duplicate_tr);
+
+
+  }
+
+  // let Product = document.getElementById('Product').value;
+  // let qty = document.getElementById('quantity').value;
+  // let price = document.getElementById('price').value;
+  // let uom = document.getElementById('uom').value;
+  // let amount = qty * price;
+
+
+  var Index = null;
+  let currentIndex;
+  var table = document.getElementById('table');
+  function update(row) {
+  Index = row;
+  currentIndex = row.rowIndex;
+  var up = document.getElementById('update');
+  var add = document.getElementById('button');
+  var can = document.getElementById('Cancel');
+  up.style.display = 'block';
+  add.style.display = 'none';
+
+  up.style.position = "relative";
+  up.style.top = "8px";
+  up.style.left = '250px';
+  can.style.position = "relative";
+  can.style.bottom = "20px";
+  can.style.left = "40px";
+  can.innerText = 'Cancel';
+
+  const cells = row.getElementsByTagName('td');
+
+
+  document.getElementById('Product').value = cells[1].innerText;
+  document.getElementById('quantity').value = cells[2].innerText;
+  document.getElementById('uom').value = cells[3].innerText;
+  document.getElementById('price').value = cells[4].innerText;
+
+
+  }
+  function editrow(event) {
+  if (Index) {
+  const cells = Index.getElementsByTagName('td');
+  validateForm();
+  let Product = document.getElementById('Product').value;
+  let qty = document.getElementById('quantity').value;
+  let price = document.getElementById('price').value;
+  let uom = document.getElementById('uom').value;
+
+  if (Product === "" || isNaN(qty) || isNaN(price) || qty <= 0 || price <=0) { return false; } else { let
+    table=document.getElementById('Table'); document.getElementById('error').textContent='' ; for (var i=1; i <
+    table.rows.length; i++) { if (i===currentIndex) { continue }; if (table.rows[i].cells[1].innerHTML===Product) {
+    alert('Product already inside!'); document.getElementById('error').textContent="Product already inside!" ; return
+    false; } } cells[1].innerHTML=Product; cells[2].innerHTML=qty; cells[3].innerHTML=uom; cells[4].innerHTML=price;
+    cells[5].innerHTML=price * qty; var up=document.getElementById('update'); var add=document.getElementById('button');
+    var can=document.getElementById('Cancel'); up.style.display='none' ; add.style.display='block' ;
+    can.innerText='Clear' ; add.style.position="relative" ; add.style.top="9px" ; add.style.left="240px" ; index=null;
+    document.getElementById('myForm1').reset(); } } } function change() { var up=document.getElementById('update'); var
+    add=document.getElementById('button'); var can=document.getElementById('Cancel'); if (up.style.display=='block' ) {
+    up.style.display='none' ; add.style.display='block' ; add.style.position="relative" ; add.style.top="8px" ;
+    add.style.left="240px" ; can.innerText='Clear' ; } } // function { // let
+    id=img.parentNode.parentNode.cells[1].innerText; // if (confirm(` are you sure to remove the product- ${id} ?`)) {
+    // let s=img.parentNode.parentNode; // s.parentNode.removeChild(s); // } // } let currentRow; function adelete(img)
+    { let id=img.parentNode.parentNode.cells[1].innerText; document.getElementById("alertText").innerText=`Are you sure
+    to remove the invoice id - ${id}?`; document.getElementById("alertBox").style.display="block" ;
+    currentRow=img.parentNode.parentNode; } document.getElementById("confirmBtn").onclick=function () {
+    currentRow.parentNode.removeChild(currentRow); document.getElementById("alertBox").style.display="none" ; }
+    document.getElementById("cancelBtn").onclick=function cancelBtn() {
+    document.getElementById("alertBox").style.display="none" ; } window.onclick=function (event) { if
+    (event.target==document.getElementById("alertBox")) { document.getElementById("alertBox").style.display="none" ; } }
+    // function headdelete(img) { // let id=img.parentNode.parentNode.cells[1].innerText; // if (confirm(` are you sure
+    to remove the invoice id - ${id} ?`)) { // let s=img.parentNode.parentNode; // s.parentNode.removeChild(s); // } //
+    } // // head
+    working-----------------------------------------------------------------------------------------------------------------
+    function heading() { validate(); newrecord(); return true; } function validate() { let
+    id=document.getElementById('id'); let vendor=document.getElementById('vendor'); let
+    docno=document.getElementById('docno'); let date=document.getElementById('date'); let
+    Address=document.getElementById('address'); if (id.value=='' ) {
+    document.getElementById('id').setAttribute("placeholder", "Invoice Id  is required *" ); id.style.borderColor='red'
+    ; } else { id.style.borderColor='black' ; document.getElementById('id').removeAttribute("placeholder"); } if
+    (vendor.value=='' ) { vendor.style.borderColor='red' ;
+    document.getElementById('verror').textContent="Vendor is  required *" ; } else { vendor.style.borderColor='black' ;
+    } if (docno.value=='' ) { docno.style.borderColor='red' ;
+    document.getElementById('docno').setAttribute("placeholder", "Document No is  required *" ); } else {
+    docno.style.borderColor='black' ; document.getElementById('docno').removeAttribute("placeholder"); } if
+    (date.value=='' ) { date.style.borderColor='red' ; //
+    document.getElementById('er4').textContent=' invoice date  required *' ;
+    document.getElementById('date').setAttribute("placeholder", "Invoice date is  required *" ); } else {
+    date.style.borderColor='black' ; document.getElementById('date').removeAttribute("placeholder"); } if
+    (Address.value=='' ) { document.getElementById('address').setAttribute("placeholder", "Address  is required *" );
+    Address.style.borderColor='red' ; } else { document.getElementById('address').removeAttribute("placeholder");
+    Address.style.borderColor='black' ; } } // function disablePlaceholders() { // let
+    id=document.getElementById("username").removeAttribute("placeholder"); // id.style.borderColor='black' ; // }
+    function hole() { let duplicate=document.getElementById('dummy'); if (duplicate.style.display==='none' ) {
+    duplicate.style.display='block' ; duplicate.backgroundColor='blue' ; } else { duplicate.style.display='none' ; } }
+    function newrecord() { let id=document.getElementById('id').value; let
+    vendor=document.getElementById('vendor').value; let docno=document.getElementById('docno').value; let
+    date=document.getElementById('date').value; let Address=document.getElementById('address').value; if (id==="" ||
+    vendor==='' || docno==='' || date==='' || Address==='' ) { // alert("value is missing"); return false; } let
+    table1=document.getElementById('table1'); let rows=table1.rows; let existingProductRow=null; for (let i=1; i <
+    rows.length; i++) { if (rows[i].cells[1].innerHTML===id) { existingProductRow=rows[i]; return false; } }
+    document.getElementById('invoiceerror').textContent='' ; if (existingProductRow) { let
+    id=document.getElementById('id').value='' ; // // error msg
+    document.getElementById('invoiceerror').textContent="Product already inside!" ; // alert('Product already inside!');
+    id.style.borderColor='red' ; return false; } else { let tr=document.createElement('tr'); let
+    td1=tr.appendChild(document.createElement('td')); let td2=tr.appendChild(document.createElement('td')); let
+    td3=tr.appendChild(document.createElement('td')); let td4=tr.appendChild(document.createElement('td')); let
+    td5=tr.appendChild(document.createElement('td')); let td6=tr.appendChild(document.createElement('td')); let
+    td7=tr.appendChild(document.createElement('td')); let td8=tr.appendChild(document.createElement('td'));
+    td1.innerHTML=rows.length; td2.innerHTML=id; td3.innerHTML=vendor; td4.innerHTML=docno; td5.innerHTML=date;
+    td6.innerHTML=`<i class="fa fa-eye" style="font-size:20px;cursor: pointer;" onclick="hole()"></i>`;
+
+    td7.innerHTML = Address;
+
+    td8.innerHTML =
+    `<img src="edit.png" class="edit" onclick=" headupdate(this.parentNode.parentNode);" title="edit" alt="edit">&nbsp;
+    <img src="icon1.png" class="trash" title="delete" onclick="headdelete(this)" alt="trash">`;
+
+    table1.appendChild(tr);
+    if (!TABLE()) {
+    return false;
+    }
+
+    }
+
+
+
+    off();
+    document.getElementById('myForm').reset();
+    document.getElementById('myForm1').reset();
+    }
+
+
+    var headIndex = null;
+    let currentIndexs;
+    var table1 = document.getElementById('table1');
+    function headupdate(rowe) {
+    overlay();
+    headIndex = rowe;
+    currentIndexs = rowe.rowIndex;
+    var up = document.getElementById('updates');
+    var add = document.getElementById('submit');
+    // var can = document.getElementById('Cancel');
+    var can = document.querySelector('.btn2');
+
+    up.style.display = 'block';
+    add.style.display = 'none';
+
+    up.style.position = "relative";
+    up.style.top = "35px";
+    up.style.left = '355px';
+    can.style.position = "relative";
+    // can.style.bottom = "20px";
+    can.style.left = "400px";
+    can.innerText = 'Cancel';
+    const cells = rowe.getElementsByTagName('td');
+    document.getElementById('id').value = cells[1].innerText;
+    document.getElementById('vendor').value = cells[2].innerText;
+    document.getElementById('docno').value = cells[3].innerText;
+    document.getElementById('date').value = cells[4].innerText;
+    document.getElementById('address').value = cells[6].innerText;
+    }
+    function updaterow(event) {
+
+    if (headIndex) {
+    const cells = headIndex.getElementsByTagName('td');
+    let id = document.getElementById('id').value;
+    let vendor = document.getElementById('vendor').value;
+    let docno = document.getElementById('docno').value;
+    let date = document.getElementById('date').value;
+    let Address = document.getElementById('address').value;
+
+    if (id === '' || vendor === '' || docno === '' || date === '' || Address == '') {
+    return false;
+    } else {
+    let table1 = document.getElementById('table1');
+    // document.getElementById('error').textContent = '';
+    for (var i = 1; i < table1.rows.length; i++) { if (i===currentIndexs) { continue }; if
+      (table1.rows[i].cells[1].innerHTML===id) { alert('invoice id already inside!'); //
+      document.getElementById('error').textContent="Product already inside!" ; return false; } } // const userObject={
+      // "productName" : id, // "vendors" : vendor, // "documentno" : docno, // "invoicedate" : date,
+      // "BillingAddress" : Address, // "lineitem" : [] // }; // console.log(userObject); cells[1].innerHTML=id;
+      cells[2].innerHTML=vendor; cells[3].innerHTML=docno; cells[4].innerHTML=date; cells[6].innerHTML=Address; var
+      up=document.getElementById('updates'); var add=document.getElementById('submit'); var
+      can=document.getElementById('Cancel'); up.style.display='none' ; add.style.display='block' ; can.innerText='Clear'
+      ; add.style.position="relative" ; add.style.top="41px" ; add.style.left="390px" ; // index=null;
+      document.getElementById('myForm').reset(); } } off(); } function overlay() { //
+      document.getElementById('update_title').style.display='none' ; //
+      document.getElementById('add_title').style.display='block' ; //
+      document.getElementById('update-button').style.display='none' ; //
+      document.getElementById('submit-button').style.display='inline-block' ; var
+      elements=document.getElementsByClassName('overlay'); for (var i=0; i < elements.length; i++) {
+      elements[i].style.display="block" ; } } function off() { var elements=document.getElementsByClassName('overlay');
+      for (var i=0; i < elements.length; i++) { elements[i].style.display="none" ; }
+      document.getElementById('myForm').reset(); document.getElementById('myForm1').reset(); } // Create an object to
+      store the value // const userObject={ // username: id, // vendors: vendor, // documentno: docno, // invoicedate:
+      date, // BillingAddress: Address // }; // Log the object to the console // let arr=[{}, {}]; // let obj={ //
+      invoiceid="i" // } function TABLE() { let table=document.getElementById('Table'); let rows=table.rows; if
+      (rows.length===1) { validateForm(); return false; } return true; } // function table() { // let
+      table=document.getElementById('table'); // // Check if the table element exists // if (!table) { //
+      console.error("Table element not found"); // return false; // } // let rows=table.rows; // // Check if the rows
+      length is zero // if (rows.length===0) { // if (typeof validateForm==="function" ) { // validateForm(); // } else
+      { // console.error("validateForm function not defined"); // } // return false; // } else { // alert("ready to
+      submit"); // } // } function reset() { document.getElementById('myForm1').reset();
+      document.getElementById('myForm').reset(); } // let id=document.getElementById('id').value; // let
+      vendor=document.getElementById('vendor').value; // let docno=document.getElementById('docno').value; // let
+      date=document.getElementById('date').value; // let Address=document.getElementById('address').value; // // let
+      table=document.getElementById('Table'); // // let rows=table.rows; // let invoiceheader=[]; // const newReceipt={
+      // invoiceid: id, // vendors: vendor, // documentno: docno, // invoicedate: date, // billingaddress: Address, //
+      invoicelines: [] // }; // for (let i=0; i < rows.length; i++) { // const cells=rows[i].cells; // const il={ // id:
+      cells[0].textContent.trim(), // product: cells[1].textContent.trim(), // qty: cells[2].textContent.trim(), //
+      price: cells[3].textContent.trim(), // uom: cells[4].textContent.trim(), // amount: cells[5].textContent.trim() //
+      }; // newReceipt.invoicelines.push(il); // } // invoiceheader.push(newReceipt); // // console.log( // //
+      receiptDatas); let currentRow1; function headdelete(img) { let id=img.parentNode.parentNode.cells[1].innerText;
+      document.getElementById("alertText").innerText=`Are you sure to remove the invoice id - ${id}?`;
+      document.getElementById("alertBox").style.display="block" ; currentRow1=img.parentNode.parentNode; }
+      document.getElementById("confirmBtn").onclick=function () { currentRow1.parentNode.removeChild(currentRow1);
+      document.getElementById("alertBox").style.display="none" ; } document.getElementById("cancelBtn").onclick=function
+      cancelBtn() { document.getElementById("alertBox").style.display="none" ; } window.onclick=function (event) { if
+      (event.target==document.getElementById("alertBox")) { document.getElementById("alertBox").style.display="none" ; }
+      } <!-- css -->
+      </table1.rows.length>
+      #PurchaseInvoice{
+      text-align: center;
+      }
+      .PurchaseInvoices{
+      text-align: center;
+      }
+
+      .addIcon1{
+      width: 70px;
+      cursor: pointer;
+      left: 1000px;
+      position: relative;
+      bottom: 30px;
+
+      }
+      .removeIcon1{
+      width: 40px;
+      cursor: pointer;
+      position: relative;
+      bottom: 40px;
+      left: 1190px;
+      padding: 5px;
+      }
+      #hideblock{
+      display: none;
+      position: fixed;
+      width: auto;
+      height: auto;
+      margin: auto;
+      background-color:rgba(0, 0, 0, 0.7);
+      top:0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      }
+      #overlayContainer{
+      background-color: white;
+      }
+      .over{
+      background-color: white;
+
+      }
+      #closeOverlay{
+      margin-left: 1200px;
+      position: relative;
+      bottom: 70px;
+      cursor: pointer;
+      padding: 15px;
+      /* border: 1px solid red; */
+      color: red;
+      }
+      .mainFieldset{
+      /* padding: 10%; */
+      width: 100%;
+      background-color:rgba(0, 0, 0, 0.7);
+      border: none;
+      }
+      textarea{
+      padding: 3px;
+
+      margin-left: 24px;
+      width: 206px;
+      height: 56px;
+      }
+      select{
+      /* padding: ; */
+      width: 212px;
+      height: 27px;
+      margin-left: 26px;
+      }
+      input{
+      width: 208px;
+      height: 23px;
+      margin-left: 25px;
+      margin-bottom: 10px;
+      }
+      #date{
+      width: 208px;
+      height: 24px;
+      }
+      .headerFieldset{
+      padding: 25px;
+      width: 70%;
+      margin: auto;
+      }
+      /* .headerTable{
+      text-align:left;
+
+      } */
+      .headerAlignLeft{
+      position: relative;
+      left: 110px;
+      bottom: 5px;
+      margin-bottom: 5px;
+
+      }
+      .headerMove{
+      position: relative;
+      left: 60px;
+
+      }
+      .lineFieldset{
+      width: 73%;
+      margin: auto;
+      /* padding: 20px; */
+
+      }
+      .lineAlginRight{
+      position: relative;
+      left: 100px;
+      bottom: 5px;
+      margin-bottom: 7px;
+
+      }
+      .lineAlginLeft{
+      position: relative;
+      left: 120px;
+      margin-bottom:7px;
+      bottom: 6px;
+
+      }
+      .linebtn{
+      position: relative;
+      left: 295px;
+      padding: 7px;
+      width: 8%;
+      }
+      .lineTable{
+      text-align: left;
+      }
+      .headerbtn{
+      position: relative;
+      left: 38%;
+      padding: 7px;
+      width: 6%;
+      }
+      /* alignment over */
+      .linetablecontainer{
+      position: relative;
+      left: 50px;
+      }
+      /* the algin in uom */
+      .lineAlginRights{
+      position: relative;
+      left: 91px;
+      bottom: 5px;
+      }
+      /* the algin in price */
+      .lineAlginLefts{
+      position: relative;
+      left: 110px;
+      bottom: 5px;
+      }
+
+
+      .allcolorwhile{
+      background-color: white;
+      }
+      .headerAlignLefts{
+      position: relative;
+      left: 83px;
+      }
+      .headerMoves{
+      position: relative;
+      left: 41px;
+      }
+      .headerMovess{
+      position: relative;
+      left: 54px;
+
+      }
+
+      .dummyFlielset{
+      background-color:white;
+      border: none;
+      width: 1200px;
+      position: relative;
+      left: 178px;
+      top: 70px;
+      }
+      .trash{
+      width: 20px;
+      cursor: pointer;
+      }
+      .viewicon{
+      width: 20px;
+      cursor: pointer;
+      }
+      .edit{
+      width: 20px;
+      cursor: pointer;
+      }
+      .lineTable,tr{
+      text-align: center;
+      }
+
+      #productAlreadyInside{
+      color: red;
+      position: relative;
+      left: 200px;
+      bottom: 10px;
+
+      }
+      #update{
+      display: none;
+      padding: 7px;
+      cursor: pointer;
+      }
+      #updates{
+      display: none;
+      padding: 5px;
+      cursor: pointer;
+
+      }
+      /* alert box code */
+      .alert-box {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+      }
+
+      .alert-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 40px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 300px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      }
+
+      .close-btn {
+      margin-left: 120px;
+      cursor: pointer;
+      padding: 8px;
+      }
+      .lineset{
+      max-height:350px;
+      }
+
+      .editRowUpdateBtn{
+      /* display :'block'; */
+      /* position : "relative"; */
+      bottom : "32px";
+      left :'400px';
+      }
+
+      #lineDeleteAlls{
+      padding: 5px;
+      position: relative;
+      left: 55px;
+      }
+      .headerupdatebtn {
+      position: relative;
+      left: 400px;
+      padding: 7px;
+      width: 6%;
+      }

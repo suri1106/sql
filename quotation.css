@@ -1,0 +1,46 @@
+* {
+    margin: 0 auto;
+}
+input {
+    padding: 5px;
+    margin: 5px;
+    outline: none;
+    width: 200px;
+}
+
+form {
+    text-align: center;
+}
+.fieldset{
+    width: 100px;
+}
+/* #div1 {
+    display: none;
+
+
+} */
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+th,td {
+            padding: 8px;
+            text-align: center;
+        }
+
+
+
+.btn{
+   cursor: pointer;
+    padding: 7px;
+     margin-left: 10px;
+  }
+
+#table_block  tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+#table_block  tr:nth-child(odd) {
+  background-color :goldenrod;
+}

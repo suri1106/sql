@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)file:///Users/qualian/Downloads/purchase%20invoice/invoice.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Document_files/invoice.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+
+
+
+    <nav>
+        <fieldset class="fieldset">
+            <legend>
+                <h1>PURCHASE INVOICE</h1>
+            </legend>
+            <form name="myForm" id="myForm" action="file:///Users/qualian/Downloads/purchase%20invoice/invoice.html" method="POST" autocomplete="off">
+
+                <!-- <fieldset class="fielset2">
+                        <table>
+                            <tr>
+                                <th><label for="id">invoice id<span style="color: red;">*</span></label></th>
+                                <td> <input type="text" name="id" id="invid"> <br></td>
+
+                                <th><label for="name">vendor id</label></th>
+                                <td> <input type="text" name="v_id" id="v_id"></td>
+
+
+                            </tr>
+
+                            <tr>
+                                <th><label for="name">order id</label></th>
+                                <td> <input type="text" name="o_id" id="o_id"></td>
+
+                                <th><label for="">invoice date</label></th>
+                                <td> <input type="date" name="email" id="date"></td>
+
+
+                            </tr>
+
+                            <tr>
+                                <th><label for="phone">document no</label></th>
+                                <td> <input type="number" name="phone" id="phone"></td>
+                                <span class="error" id="phone_noerror"></span>
+                                <th>Billing Address</th>
+                                <td> <textarea name="" id="address" cols="5" rows="10"></textarea> </td>
+                                <span class="error" id="dateerror"></span>
+
+
+                            </tr>
+
+                        </table>
+                    </fieldset>
+                    <br><br> -->
+                <div class="div2">
+                    <fieldset class="fielset2">
+
+                        <span class="error" id="dateerror"></span><table>
+                            <tbody><tr>
+                                <th><label for="id">invoice line id<span style="color: red;">*</span></label></th>
+                                <td> <input type="text" name="id" id="ilid"> <br></td>
+
+                                <th><label for="in_id"> invoice id</label></th>
+                                <td> <input type="text" name="in _id" id="in_id"></td>
+
+                            </tr>
+
+                            <tr>
+                                <th><label for="p_id">product id</label></th>
+                                <td> <input type="text" name="p_id" id="p_id"></td>
+
+                                <th><label for="phone">UOM</label></th>
+                                <td> <input type="text" name="uom" id="uom"></td>
+
+                            </tr>
+
+                            <tr>
+                                <th><label for="">quantity</label></th>
+                                <td> <input type="number" name="quantity" id="quantity"> </td>
+                                
+                                <th><label for="price">unit price</label></th>
+                                <td>
+                                    <input type="number" name="price" id="price">
+                                    <span class="error" id="addresserror"></span>
+                                </td>
+
+                            </tr>
+
+                        </tbody></table>
+                    </fieldset>
+                    <br><br>
+                </div>
+
+                <button class="btn1" type="reset">clear</button>
+                &nbsp;
+
+
+
+                
+            </form>
+            <button class="btn1" type="submit" onclick="addrecord()">ADD</button>
+            <!-- <button onclick="hideElement()" class="btn"> customer detail</button> -->
+
+        </fieldset>
+    </nav>
+    <br> <br>
+
+
+    <div id="table_block">
+        <table id="tb1" border="1px solid black " role="all" style="border-collapse: collapse; width:100%;">
+
+            <tbody><tr>
+                <th>invoice line id</th>
+                <th>invoice id</th>
+                <th>product id</th>
+                <th>quantity</th>
+                <th>UOM</th>
+                <th>unit price</th>
+                <th>total amount</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>10101</td>
+                <td>021</td>
+                <td>312</td>
+                <td>1</td>
+                <td>KG</td>
+                <td> 120 </td>
+                <td> 120 </td>
+
+
+                <td> <button onclick="adelete(this)">delete</button></td>
+            </tr>
+        </tbody><tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>
+            <button onclick="adelete(this)"> delete</button></td></tr></table>
+
+    </div>
+    <script src="./Document_files/invoice.js"></script>
+
+
+
+</body></html>

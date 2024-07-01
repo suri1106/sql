@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>customer</title>
+    <link rel="stylesheet" href="customer.css">
+</head>
+
+<body>
+    <nav>
+        <fieldset class="fieldset">
+            <legend>
+                <h1>customer</h1>
+            </legend>
+            <form name="myForm" id="myForm" action="" method="POST" autocomplete="off">
+
+                <table>
+                    <tr>
+                        <th><label for="id">customer id <span style="color: red;">*</span></label></th>
+                        <td> <input type="text" name="id" id="id"></td>
+                        <span class="error" id="iderror"></span>
+                        <th><label for="name">customer_name</label></th>
+                        <td> <input type="text" name="name" id="name"></td>
+                        <span class="error" id="nameerror"></span>
+
+                    </tr>
+
+                    <tr>
+                        <th><label for="email">customer_email</label></th>
+                        <td> <input type="email" name="email" id="email"></td>
+                        <span class="error" id="emailerror"></span>
+                        <th><label for="phone">phone_no</label></th>
+                        <td> <input type="number" name="phone" id="phone"></td>
+                        <span class="error" id="phone_noerror"></span>
+                    </tr>
+
+                    <tr>
+                        <th>reg_date</th>
+                        <td> <input type="date" name="date" id="date"></td>
+                        <span class="error" id="dateerror"></span>
+                        <th><label for="address">address</label></th>
+                        <td> <textarea name="address" id="address" rows="5" placeholder="Enter the address"></textarea>
+                            <span class="error" id="addresserror"></span>
+                        </td>
+
+                    </tr>
+
+                </table>
+                <br><br>
+                <div>
+                    <button class="btn1" type="reset">clear</button>
+                    &nbsp;
+                    <button class="btn1" type="submit" onclick="addrecord()">ADD</button>
+
+
+                </div>
+            </form>
+            <!-- <button onclick="hideElement()" class="btn"> customer detail</button> -->
+
+        </fieldset>
+    </nav>
+    <br> <br>
+
+
+    <div id="table_block">
+        <table id="tb1" border="1px solid black " role="all" style="border-collapse: collapse; width:100%;">
+
+            <tr>
+                <th>customer_ID</th>
+                <th>customer_name</th>
+                <th>customer_email</th>
+                <th>phone_no</th>
+                <th>reg_date</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>10101</td>
+                <td>surya</td>
+                <td>suryakuppusamy21</td>
+                <td>9626436975</td>
+                <td>28-05-2024</td>
+                <td>
+                    3/43 middle street vengur thirukkovilur
+                </td>
+                <td> <button onclick="adelete(this)">delete</button></td>
+            </tr>
+        </table>
+
+    </div>
+    <script src="customer.js"></script>
+</body>
+
+</html>

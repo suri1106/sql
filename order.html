@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order</title>
+    <link rel="icon" type="image/x-icon" href="m1.png">
+    <link rel="stylesheet" href="order.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <fieldset class="fieldset">
+            <legend>
+                <h1>purchase order</h1>
+            </legend>
+            <form id="myForm" action="" onsubmit="return onsubmitHandler()" method="POST">
+                <table>
+                    <tr>
+
+                        <th><label for="id">order_id </label></th>
+                        <td> <input type="text" name="id" id="id"></td>
+                        <th><label for="p_id">product_id </label></th>
+                        <td> <input type="text" name="p_id" id="p_id"></td>
+
+                    </tr>
+                    <tr>
+
+                        <th><label for="q_id">quotation id </label></th>
+                        <td> <input type="text" name="q_id" id="q_id"></td>
+                        <th><label for="v_id">vendor id</label></th>
+                        <td> <input type="text" name="v_id" id="v_id"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <th> <label for="Stock">Stock</label></th>
+                        <td><input type="number" name="stock" id="stock"></td>
+                        <th><label for="doc_date">doc_date</label></th>
+                        <td> <input type="date" name="date" id="date"></td>
+                    </tr>
+                </table>
+                <br><br>
+                <div>
+                    <button type="reset" class="btn">clear</button>
+                    <button type=submit class="btn"> add</button>
+
+                </div>
+            </form>
+        </fieldset> <br> <br>
+        <div id="table_block">
+            <table id="tb1" border="1px solid black " style="border-collapse: collapse; width:100%;">
+                <tr>
+                    <th>purchase order_id</th>
+                    <th>product id</th>
+                    <th>quotation id</th>
+                    <th>vendor id</th>
+                    <th>stock </th>
+                    <th>doc_date</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>10101</td>
+                    <td>210</td>
+                    <td>432</td>
+                    <td>321</td>
+                    <td>43</td>
+                    <td>28-05-2024</td>
+                    <td> <button onclick="adelete(this)">delete</button></td>
+                </tr>
+            </table>
+        </div>
+        <script src="order.js">
+        </script>
+
+
+</body>
+
+</html>

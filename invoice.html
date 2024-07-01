@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="m1.png">
+    <style>
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        tr:nth-child(even) {
+            background-color: aliceblue;
+            padding: 20px;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        tr:nth-child(odd) {
+            background-color: gray;
+        }
+
+        tr:hover {
+            background-color: coral;
+        }
+
+        td:hover {
+            background-color: aqua;
+
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table border="1px soild black">
+        <tr>
+            <th>invoice id</th>
+            <th>vendor id</th>
+            <th>name</th>
+            <th>quantity</th>
+            <th>order date</th>
+            <th>expect date</th>
+            <th> totalamount</th>
+            <th>Action</th>
+
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>201</td>
+            <td>rice</td>
+            <td>10</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>201</td>
+            <td>note</td>
+            <td>10</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>103</td>
+            <td>201</td>
+            <td>pen</td>
+            <td>12</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>104</td>
+            <td>201</td>
+            <td>laptop</td>
+            <td>12</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>105</td>
+            <td>201</td>
+            <td>water glass</td>
+            <td>9</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>106</td>
+            <td>201</td>
+            <td>rice</td>
+            <td>10</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>107</td>
+            <td>201</td>
+            <td>note</td>
+            <td>10</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>108</td>
+            <td>201</td>
+            <td>pen</td>
+            <td>12</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>109</td>
+            <td>201</td>
+            <td>laptop</td>
+            <td>12</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>110</td>
+            <td>201</td>
+            <td>water glass</td>
+            <td>9</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>111</td>
+            <td>201</td>
+            <td>rice</td>
+            <td>10</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>112</td>
+            <td>201</td>
+            <td>note</td>
+            <td>10</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>113</td>
+            <td>201</td>
+            <td>pen</td>
+            <td>12</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button><button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>114</td>
+            <td>201</td>
+            <td>laptop</td>
+            <td>12</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>115</td>
+            <td>201</td>
+            <td>water glass</td>
+            <td>9</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>116</td>
+            <td>201</td>
+            <td>rice</td>
+            <td>10</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button><button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>117</td>
+            <td>201</td>
+            <td>note</td>
+            <td>10</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>118</td>
+            <td>201</td>
+            <td>pen</td>
+            <td>12</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>119</td>
+            <td>201</td>
+            <td>laptop</td>
+            <td>12</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+        <tr>
+            <td>120</td>
+            <td>201</td>
+            <td>water glass</td>
+            <td>9</td>
+            <td>31-05-2024</td>
+            <td>02-06-2024</td>
+            <td> 500</td>
+            <td><button>Edit</button> <button onclick="removeRow(this)">Remove</button></td>
+        </tr>
+    </table>
+    <script>
+        function removeRow(button) {
+
+            var row = button.parentNode.parentNode;
+
+            row.parentNode.removeChild(row);
+        }
+    </script>
+
+
+
+</body>
+
+</html>

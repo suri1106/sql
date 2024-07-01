@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quotation</title>
+    <link rel="icon" type="image/x-icon" href="m1.png">
+    <link rel="stylesheet" href="quotation.css">
+</head>
+
+<body>
+    <fieldset class="fieldset">
+        <legend>
+            <h1>quotation</h1>
+        </legend>
+
+
+        <form id="myForm" action="" onsubmit="return onsubmitHandler()" method="POST" autocomplete="off">
+            <table>
+                <tr>
+                    <div>
+                        <th><label for="id">quotation id <span style="color: red;">*</span></label></th>
+                        <td> <input type="text" name="id" id="id"></td>
+                        <th><label for="vid">vendor id <span style="color: red;">*</span></label></th>
+                        <td> <input type="text" name="v_id" id="v_id"></td>
+                    </div>
+                </tr>
+
+                <tr>
+
+                    <th> <label for="Stock">Stock</label></th>
+                    <td><input type="number" name="stock" id="stock"></td>
+
+                    <th><label for="price">price</label></th>
+                    <td> <input type="number" name="price" id="price"></td>
+
+                </tr>
+
+                <tr>
+                    <th><label for="doc_date">document_date</label></th>
+                    <td> <input type="date" name="date" id="date"></td>
+                    <th><label for="vdate">validity_date</label></th>
+                    <td> <input type="date" name="vdate" id="vdate"></td>
+
+                </tr>
+                <tr>
+
+                </tr>
+            </table>
+            <br><br>
+            <div>
+                <button type="reset" class="btn">clear</button>
+                <button type=submit class="btn"> add</button>
+
+            </div>
+        </form>
+
+    </fieldset>
+
+
+    <!-- <button onclick="hideElement()" class="btn"> show recipt</button> -->
+    <br><br>
+    <div id="table_block">
+
+        <table id="tb1" border="1px solid black " role="all" style="border-collapse: collapse; padding: 10px;">
+
+            <tr>
+                <th>quotation_ID</th>
+                <th>vendor_id</th>
+                <th>stock</th>
+                <th>price</th>
+                <th>doc_date</th>
+                <th>validity_date</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>21342</td>
+                <td>11121</td>
+                <td>212</td>
+                <td>15000</td>
+                <td>28-05-2024</td>
+                <td>
+                    28-05-2025
+                </td>
+                <td> <button onclick="adelete(this)">delete</button></td>
+            </tr>
+        </table>
+
+    </div>
+    <script src="quotation.js">
+    </script>
+
+
+
+
+</body>
+
+</html>

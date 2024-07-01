@@ -1,0 +1,399 @@
+
+#hideblock{
+    display: none;
+    position: fixed;
+    width: auto;
+    height: auto;
+    margin: auto;
+    background-color:rgba(0, 0, 0, 0.7);
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+#overlayContainer{
+      background-color: rgba(0, 0, 0, 0.7);;   
+}
+.over{
+    background-color: white;
+} 
+/* 
+.legend1{
+   text-align: center;
+   color: salmon;
+} */
+
+input{
+    padding: 5px;
+    margin: 7px;
+    width: 200px;
+    margin-left: 20px;
+}
+#docno{
+    width: 201px;
+}
+textarea{
+    padding: 3px;
+    width: 205px;
+    height: 20px;
+    margin-left: 13px;
+}
+
+.fielset1{
+    width: 900px;
+    position: relative;
+    left: -100px;
+    margin-left: 50px;
+   
+}
+.form_container1{
+    position: relative;
+    left: 200px;
+ 
+}
+
+select{
+    width: 212px;
+    padding: 5px;
+    margin-left: 10px;
+}
+#Vendor{
+    width: 211px;
+    padding: 5px;
+    margin-left: 9px;
+}
+.trash{
+    width: 20px;
+    cursor: pointer;
+}
+.viewicon{
+    width: 20px;
+    cursor: pointer;
+}
+.edit{
+    width: 20px;
+    cursor: pointer;
+}
+.deleteall{
+    width: 50px;
+    cursor: pointer;
+    position: relative;
+    bottom: 40px;
+    left: 1500px;
+    padding: 5px;
+}
+
+#table_block th,td{
+    text-align: center;
+}
+/*  label content start with left */
+.contentstartwithleft{
+    text-align: left;
+}
+.fielset{ 
+    width: 900px;
+    position: relative;
+    left: -100px;
+    margin-left: 50px
+}
+
+#table_block th{
+    padding: 7px;
+
+}
+/* header button submit and reset */
+ .btn1{   
+  position: relative;
+    left: 340px;
+    width: 60px;
+    cursor: pointer;
+}
+.btn2{   
+    position: relative;
+      left: 313px;
+      width: 60px;
+      cursor: pointer;
+  }
+
+
+/*  */
+.form_container2{
+margin-left: 200px;
+padding-bottom: 20px;
+
+}
+.btn{
+    margin-left: 200px;
+
+}
+.algin_table1{
+ position: relative;
+left: 69px;
+}
+.form2_align{
+    margin-left: 150px;
+}
+/* this is btn width */
+#button{
+    width: 60px;
+    cursor: pointer;
+    padding: 5px;
+}
+#table_block{
+    margin-left: 60px;
+    position: relative;
+    bottom: 25px;
+} 
+
+.forms input{
+    margin: 7px;
+}
+.fieldsetall{
+    margin-top: 70px;
+    width: 200px;
+    margin-left: 203px;
+    background-color:white;
+}
+.all{
+     background-color:rgba(0, 0, 0, 0.7); 
+    border: none;
+}
+#update{
+    display: none; 
+    padding: 5px;
+    cursor: pointer;
+}
+#updates{
+    display: none; 
+    padding: 5px;
+    cursor: pointer;
+  
+}
+
+
+#Cancel{
+
+    width: 60px;
+    padding: 5px;
+    cursor: pointer;
+}
+.align_left{
+    position: relative;
+    left: 50px;
+}
+#uom{
+    position: relative;
+    right: 15px;
+    /* border: none; */
+}
+#Product{
+    margin-right: 24px;
+}
+#productAlreadyInside{
+    color: red;
+    position: relative;
+    left: 100px;
+    top: 10px;
+}
+
+/* header error */
+
+::placeholder{
+    color: red;
+}
+/* #dummy{
+    display: none;
+    margin-left: 400px;
+} */
+.AddRecord_img{
+    width: 100px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-left: 1350px;
+    position: relative;
+    bottom: 25px;
+
+}
+.list{
+    text-align: center;
+position: relative;
+top:20px;
+}
+/* invoice list */
+/* overlay css */
+
+#closeOverlay{
+    margin-left: 1200px; 
+    position: relative;
+     bottom:  70px;
+      cursor: pointer;
+     padding: 15px;
+     /* border: 1px solid red; */
+}
+/* alert box code */
+.alert-box {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.alert-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 40px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.close-btn {
+    margin-left: 120px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.headerTableStyle{
+position: relative;
+bottom: 80px; 
+  }
+#table1,th{  
+    padding: 8px;
+}
+/* #table1:first-child {
+    background-color:thistle;
+  } */
+#table1  tr:nth-child(even) {
+    background-color: #f2f2f2;
+    padding: 8px;
+  }
+  /* #table1  tr:nth-child(odd) {
+    background-color :	thistle;
+    padding: 8px;
+  } */
+  .color{
+      background-color: lavender;
+      font-size: 20px;
+  }
+/* pop box */
+  tbody{
+      padding: 5px;
+  }
+  .pop{
+      display: none;
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+ #viewTable{
+     background-color: #f2f2f2;
+        padding: 15px;
+        width: 75%;
+ } 
+.headershowlineitem{
+    background-color: white;
+    /* padding: 100px; */
+    width: 70%;
+    position: relative;
+    left: 200px;
+    top: 100px;
+}
+.lineitem{
+    position: relative;
+    /* right: 458px; */
+   
+    font-size: 40px;
+    background-color: #f2f2f2;
+    
+}
+/* .purchaseinvoicecenter{
+    text-align: center;
+    background-color: #f2f2f2;
+} */
+.vendorinfo{
+    text-align: left;
+    position: relative;
+    bottom: 100px;
+    left: -70px;
+}
+.vendoraddress{
+    text-align: left;
+    position: relative;
+    bottom: 100px; 
+    left: -60px;
+}
+.vendorname{
+    position: relative;
+    bottom: 100px;
+    right: 610px;
+}
+.invoviceinfo{
+    position: relative;
+    bottom: 260px;
+    left: 500px;
+    font-size: 30px;
+
+}
+.invoviceId{
+    /* width: 90px; */
+    position: relative;
+    bottom: 275px;
+    left: 483px;
+}
+.invovicedate{
+    /* width: 190px; */
+    position: relative;
+    bottom: 275px;
+    left: 506px;
+}
+.invoviceDoc{
+    /* width: 190px; */
+    position: relative;
+    bottom: 275px;
+    left: 490px;
+}
+.line{
+    position: relative;
+    bottom: 70px;
+    font-size: 30px;
+}
+#cancelPopBtn{
+    position: relative;
+    bottom: 500px;
+    left: 500px;
+    color: red;
+}
+.vendoralgin{
+    position: relative;
+    left: 100px;
+    top: 100px;
+}
+.invoicealgin{
+    position: relative;
+    right: 30px;
+    top: 80px;
+}
+
+.linedeleteall{
+    width: 20px;
+    cursor: pointer;
+    position: relative;
+    right: 370px;
+    top: 30px;
+}

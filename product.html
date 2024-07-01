@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+    <link rel="icon" type="image/x-icon" href="m1.png">
+    <link rel="stylesheet" href="product.css">
+</head>
+
+<body>
+
+    <fieldset class="fieldset">
+        <legend>
+            <h1>product</h1>
+        </legend>
+        <form id="myForm" action="" method="POST" autocomplete="off">
+
+            <table>
+                <tr>
+                    <th><label for="id">prouct id <span style="color: red;">*</span> </label></th>
+                    <td> <input type="text" name="id" id="id"></td>
+                    <th><label for="name">prouct_name</label></th>
+                    <td> <input type="text" name="name" id="name"></td>
+                </tr>
+
+                <tr>
+                    <th> <label for="uom">uom</label></th>
+                    <td> <select name="uom" id="uom">
+                            <option value="">select</option>
+                            <option value="kg">KG</option>
+                            <option value=" item"> item</option>
+                            <option value=" Litre"> Litre</option>
+                        </select>
+                    </td>
+
+                    <th><label for="stock">stock</label></th>
+                    <td> <input type="number" name="stock" id="stock"></td>
+
+                </tr>
+
+                <tr>
+                    <th><label for="des"> Description</label></th>
+                    <td> <input type="text" name="des" id="des"></td>
+                    <th> <label for="price">unitprice</label></th>
+                    <td> <input type="number" name="price" id="price"></td>
+                </tr>
+
+            </table>
+            <br><br>
+            <div>
+
+
+                <button type="reset">clear</button> &nbsp;
+                <button type=submit onclick=" return onsubmitHandler()"> ADD </button>
+            </div>
+        </form>
+
+
+    </fieldset>
+    <!-- <button onclick="hideElement()" class="btn"> show recipt</button> -->
+    <br> <br>
+    <div id="div1">
+        <table id="tb1" border="1px solid black " role="all" style="border-collapse: collapse; width: 100%;">
+
+            <tr>
+                <th>product_ID</th>
+                <th>name</th>
+                <th>uom</th>
+                <th>stock</th>
+                <th>Description</th>
+                <th>unit price</th>
+                <th>totalprice</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>11121</td>
+                <td>laptop</td>
+                <td>item</td>
+                <td>1</td>
+                <td> HP</td>
+                <td>
+                    30000
+                </td>
+                <td>
+                    30000
+                </td>
+                <td> <button onclick="adelete(this)">delete</button></td>
+            </tr>
+        </table>
+
+        <script src="product.js">
+
+        </script>
+
+
+
+
+</body>
+
+</html>

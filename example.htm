@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage Example</title>
+</head>
+
+<body>
+    <h1>Local Storage with Input Fields</h1>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username">
+    <button id="saveBtn">Save</button>
+    <button id="loadBtn">Load</button>
+    <button id="clearBtn">Clear</button>
+
+    <script>
+        // Save data to local storage
+        document.getElementById('saveBtn').addEventListener('click', function () {
+            const username = document.getElementById('username').value;
+            localStorage.setItem('username', username);
+            alert('Username saved!');
+        });
+
+        // Load data from local storage
+        document.getElementById('loadBtn').addEventListener('click', function () {
+            const savedUsername = localStorage.getItem('username');
+            if (savedUsername) {
+                document.getElementById('username').value = savedUsername;
+                alert('Username loaded!');
+            } else {
+                alert('No username found in local storage.');
+            }
+        });
+
+        // Clear data from local storage
+        document.getElementById('clearBtn').addEventListener('click', function () {
+            localStorage.removeItem('username');
+            alert('Username cleared!');
+        });
+
+    </script>
+</body>
+
+</html>
